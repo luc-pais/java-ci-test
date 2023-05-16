@@ -15,9 +15,11 @@ jobs:
     strategy:
       matrix:
         java:
+          - "11.0.19+7"
           - "17.0.7+7"
           - "18.0.2+101"
           - "19.0.2+7"
+          - "20.0.1+9"
     name: Java ${{ matrix.Java }} sample
     steps:
       - uses: actions/checkout@v3
