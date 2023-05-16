@@ -15,8 +15,13 @@ jobs:
     strategy:
       matrix:
         java:
-          - "8"
+          - "8.0"
+          - "8.0.282+8"
+          - "8.0.232"
           - "11"
+          - "11.0.4"
+          - "11.0.13"
+          - "11.0.18"
           - "17"
     name: Java ${{ matrix.Java }} sample
     steps:
@@ -24,6 +29,6 @@ jobs:
       - name: Setup java
         uses: actions/setup-java@v3
         with:
-          distribution: <distribution>
+          distribution: "temurin"
           java-version: ${{ matrix.java }}
       - run: java HelloWorld.java
